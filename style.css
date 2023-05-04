@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    position: relative;
+    min-height: 100vh;
+    background: #2e2c2c;
+}
+.container h1{
+    font-size: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 15px;
+    color: white;
+    text-align: center;
+    text-transform: capitalize;
+}
+.container .subcontainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 10px;
+}
+.container .subcontainer .image{
+    height: 250px;
+    width: 250px;
+    border: 5px solid #fff;
+    box-shadow: 0 10px 10px rgba(0,0,0.5);
+    overflow: hidden;
+}
+.container .subcontainer .image img{
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+    transition: .2s linear;
+}
+.container .subcontainer .image:hover img{
+    transform: scale(1.1);
+}
+.container .popimage{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    display: none;
+
+}
+.container .popimage span{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 50px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 100;
+}
+.container .popimage img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid #fff;
+    width: 500px;
+    object-fit: cover;
+}
+@media (max-width:780px)
+{
+    .container .popimage img{
+        width:90%;
+    }
+}

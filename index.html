@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>popup images</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>images</h1>
+        <div class="subcontainer">
+            <div class="image"><img src="image/img1.jpg" alt=""></div>
+            <div class="image"><img src="image/img2.jpg" alt=""></div>
+            <div class="image"><img src="image/img3.jpg" alt=""></div>
+            <div class="image"><img src="image/img4.jpg" alt=""></div>
+            <div class="image"><img src="image/img5.jpg" alt=""></div>
+        </div>
+        <div class="popimage">
+            <span>&times;</span>
+            <img src="image/img1.jpg" alt="">
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.subcontainer img').forEach(image =>{
+            image.onclick = () =>{
+                document.querySelector('.popimage').style.display = 'block';
+                document.querySelector('.popimage img').src = image.getAttribute('src');
+            }
+        });
+        document.querySelector('.popimage span').onclick = () =>{
+            document.querySelector('.popimage').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
